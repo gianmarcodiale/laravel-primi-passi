@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $msg = 'Hello World';
+    return view('home', compact('msg'));
+});
+
+Route::get('/about', function () {
     $name = 'Gianmarco';
     $surname = 'Di Alessandro';
     $job = 'Student';
     $interests = ['Videogames', 'Programming', 'Manga', 'Ski', 'Football'];
-    return view('home', compact('msg', 'name', 'surname', 'job', 'interests'));
+    return view('about', compact( 'name', 'surname', 'job', 'interests'));
 });

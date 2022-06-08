@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>About</title>
 </head>
 <style>
     .text-center {
@@ -23,10 +23,13 @@
 <body>
     <nav id="site_nav" class="text-center">
         <a href="{{ url('/') }}">Home</a>
-        <a href="{{ url('/about') }}">About</a>
     </nav>
     <div id="heading" class="text-center">
-        <h1>{{ $msg }}</h1>
+        <h4>My name is {{ $name . ' ' . $surname }} and I am a {{ $job }}</h4>
+        <p>My interests are:</p>
+        @foreach ($interests as $interest)
+            <p>{{ $interest }}</p>
+        @endforeach
     </div>
 </body>
 
